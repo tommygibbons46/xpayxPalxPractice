@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C2061" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="payPalPractice" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +15,104 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dcj-IE-bRl">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="SjJ-NX-5uZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="y0i-X1-DZa"/>
+                                </constraints>
+                                <state key="normal" title="Make Payment">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SjJ-NX-5uZ"/>
+                                        <exclude reference="y0i-X1-DZa"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="SjJ-NX-5uZ"/>
+                                        <include reference="y0i-X1-DZa"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="makePaymentButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nOp-ag-3TU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Payment Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bjO-5P-dvx">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="129" y="179" width="142" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIu-sw-F0p">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="194" id="pyt-cd-UVw"/>
+                                    <constraint firstAttribute="height" constant="30" id="vTW-F8-Ubl"/>
+                                </constraints>
+                                <state key="normal" title="Authorize Recurring Payments">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pyt-cd-UVw"/>
+                                        <exclude reference="vTW-F8-Ubl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="96" y="380" width="208" height="30"/>
+                                    <mask key="constraints">
+                                        <include reference="pyt-cd-UVw"/>
+                                        <include reference="vTW-F8-Ubl"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="authorizeFuturePaymentsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KuJ-xt-dFR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Dcj-IE-bRl" secondAttribute="centerX" id="WUL-aE-PAA"/>
+                            <constraint firstAttribute="centerY" secondItem="Dcj-IE-bRl" secondAttribute="centerY" id="sh3-Ci-ws9"/>
+                            <constraint firstItem="CIu-sw-F0p" firstAttribute="top" secondItem="Dcj-IE-bRl" secondAttribute="bottom" constant="65" id="tIU-zd-UzG"/>
+                            <constraint firstAttribute="centerX" secondItem="CIu-sw-F0p" secondAttribute="centerX" id="wgg-3x-pft"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Dcj-IE-bRl"/>
+                                <exclude reference="bjO-5P-dvx"/>
+                                <exclude reference="CIu-sw-F0p"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="WUL-aE-PAA"/>
+                                <exclude reference="sh3-Ci-ws9"/>
+                                <exclude reference="tIU-zd-UzG"/>
+                                <exclude reference="wgg-3x-pft"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Dcj-IE-bRl"/>
+                                <include reference="bjO-5P-dvx"/>
+                                <include reference="CIu-sw-F0p"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="WUL-aE-PAA"/>
+                                <include reference="sh3-Ci-ws9"/>
+                                <include reference="tIU-zd-UzG"/>
+                                <include reference="wgg-3x-pft"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="paymentTextField" destination="bjO-5P-dvx" id="L76-hI-NV2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
